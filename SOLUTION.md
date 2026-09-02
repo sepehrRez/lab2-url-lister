@@ -1,7 +1,7 @@
 # UrlCount - Execution and Performance Analysis
 
 ## Implementation Approach
-I used paython for URLcounting for Hadoop implemetation.
+I used python for URLcounting with Hadoop streaming.
 
 - **Mapper**: I implemented URLMapper using Regex in Python.  Mapper reads the documents line by line and uses Regular expression (`href="([^"]*)"`) to extract all hyperlink references and outputs `<URL, 1>`.
 - **Reducer**: Aggregates the occurrence count for each unique URL and applies a threshold filter, printing only URLs with a frequency strictly greater than 5 (`count > 5`).
@@ -10,7 +10,7 @@ I used paython for URLcounting for Hadoop implemetation.
 ## Execution Results & Benchmarking
 
 | Cluster Setup | Execution Time | CPU Time Spent |
-| :--- | :--- | :--- | :--- | :--- |
+| :--- | :--- | :--- | 
 | **2 Workers** | 1m 39.061s | 15,440 ms | 
 | **4 Workers** | 1m 50.332s | 36,780 ms | 
 
